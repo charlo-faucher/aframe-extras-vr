@@ -196,7 +196,7 @@ module.exports = AFRAME.registerComponent('movement-controls', {
 
         // Rotate to heading
         quaternion.copy(cameraEl.object3D.quaternion);
-        //quaternion.premultiply(el.object3D.quaternion); // Keep the object current rotation
+        quaternion.premultiply(el.object3D.quaternion);
         dVelocity.applyQuaternion(quaternion);
 
         const factor = dVelocity.length();
